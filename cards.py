@@ -1,11 +1,11 @@
 import random
 
 ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
-suites = ["♡", "♢", "♠", "♣"]
+suits = ["♡", "♢", "♠", "♣"]
 deck = []
 
 for r in ranks:
-    for s in suites:
+    for s in suits:
         deck.append((r, s))
 
 def print_deck(deck):
