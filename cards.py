@@ -5,6 +5,9 @@ rank_values = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, 
 suits = ["♡", "♢", "♠", "♣"]
 deck = []
 
+chips = 100
+bet = 10
+
 for r in ranks:
     for s in suits:
         deck.append((r, s))
@@ -40,6 +43,9 @@ def hand_value(hand):
         else:
             return v+1
 
+def is_blackjack(hand):
+    return len(hand) == 2 and hand_value(hand) == 21
+
 
 random.shuffle(deck)
 
@@ -54,3 +60,8 @@ print("Dealer: ",end="")
 print_cards(dealer_hand)
 print("Player: ",end="")
 print_cards(player_hand)
+
+if is_blackjack(player_hand):
+    dealer_hand.append(deal_card(deck))
+    if not is_blackjack(dealer_hand):
+        chips += bet * 3 // 2
