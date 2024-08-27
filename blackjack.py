@@ -99,6 +99,11 @@ def game_round():
         print(">>> Dealer busted!")
         return
 
+    if is_blackjack(dealer_hand):
+        chips -= bet
+        print(">>> Dealer wins with Blackjack!")
+        return
+
     if hand_value(player_hand) > hand_value(dealer_hand):
         chips += bet
         print(">>> Player wins!")

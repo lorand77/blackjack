@@ -81,6 +81,10 @@ def game_round():
         chips += bet
         return
 
+    if is_blackjack(dealer_hand):
+        chips -= bet
+        return
+
     if hand_value(player_hand) > hand_value(dealer_hand):
         chips += bet
     elif hand_value(player_hand) < hand_value(dealer_hand):
@@ -91,4 +95,3 @@ for i in range(1000000):
     game_round()
 
 print(chips)
-
