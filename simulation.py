@@ -6,11 +6,6 @@ suits = ["♡", "♢", "♠", "♣"]
 
 bet = 1
 
-def print_cards(cards):
-    for card in cards:
-        print(card[0]+card[1], end=" ")
-    print("\tValue:",hand_value(cards))    
-
 def deal_card(deck):
     return deck.pop(0)
 
