@@ -4,8 +4,7 @@ ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 rank_values = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, "J":10, "Q":10, "K":10}
 suits = ["♡", "♢", "♠", "♣"]
 
-chips = 0
-bet = 10
+bet = 1
 
 def print_cards(cards):
     for card in cards:
@@ -60,11 +59,14 @@ def game_round():
     if is_blackjack(player_hand):
         dealer_hand.append(deal_card(deck))
         if not is_blackjack(dealer_hand):
-            chips += bet * 3 // 2
+            chips += bet * 3 / 2
+            counts["player_wins_bj"] += 1
+        else:
+            counts["draw_bj"] += 1
         return
     
     while True:
-        if hand_value(player_hand) >= 15:
+        if hand_value(player_hand) >= limit:
             break
         player_hand.append(deal_card(deck))
         if hand_value(player_hand) >= 21:
@@ -72,6 +74,7 @@ def game_round():
     
     if hand_value(player_hand) > 21:
         chips -= bet
+        counts["player_busted"] += 1
         return
     
     while hand_value(dealer_hand) < 17:
@@ -79,19 +82,30 @@ def game_round():
 
     if hand_value(dealer_hand) > 21:
         chips += bet
+        counts["dealer_busted"] += 1
         return
 
     if is_blackjack(dealer_hand):
         chips -= bet
+        counts["dealer_wins_bj"] += 1
         return
 
     if hand_value(player_hand) > hand_value(dealer_hand):
         chips += bet
+        counts["player_wins"] += 1
     elif hand_value(player_hand) < hand_value(dealer_hand):
         chips -= bet
+        counts["dealer_wins"] += 1
+    else:
+        counts["draw"] += 1
     
-
-for i in range(1000000):
-    game_round()
-
-print(chips)
+for limit in [12,13,14,15,16,17,18,19]:
+    counts = {"player_wins_bj" : 0, "draw_bj" : 0,"player_busted" : 0, "dealer_busted" : 0, 
+          "dealer_wins_bj" : 0, "player_wins" : 0, "dealer_wins" : 0, "draw" : 0}
+    chips = 0
+    for i in range(1000000):
+        game_round()
+    print(limit)
+    print(counts)
+    print(chips)
+    print("--------------------------------------------------------------------")
