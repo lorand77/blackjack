@@ -94,7 +94,7 @@ def game_round():
     else:
         counts["draw"] += 1
     
-for limit in [12,13,14,15,16,17,18,19]:
+for limit in [12,13,14,15,16,17,18]:
     counts = {"player_wins_bj" : 0, "draw_bj" : 0,"player_busted" : 0, "dealer_busted" : 0, 
           "dealer_wins_bj" : 0, "player_wins" : 0, "dealer_wins" : 0, "draw" : 0}
     chips = 0
