@@ -35,6 +35,26 @@ def hand_value(hand):
 def is_blackjack(hand):
     return len(hand) == 2 and hand_value(hand) == 21
 
+def has_ace(hand):
+    for card in hand:
+        if card[0] == "A":
+            return True
+    return False
+
+def hand_value_without_one_ace(hand):
+    v = 0
+    for card in hand:
+        if card[0] != "A":
+            v += rank_values[card[0]]
+    n_aces = 0       
+    for card in hand:
+        if card[0] == "A":
+            n_aces += 1
+    if n_aces<1:
+        raise("hand should have an Ace")
+    v += n_aces-1
+    return v
+
 def game_round():
     global chips
 
@@ -59,13 +79,26 @@ def game_round():
         else:
             counts["draw_bj"] += 1
         return
-    
+
     while True:
-        if hand_value(player_hand) >= 17 or ((hand_value(player_hand) >= 12 and hand_value(dealer_hand) < 7) and 
+        if has_ace(player_hand) and hand_value_without_one_ace(player_hand) < 10:
+            if hand_value_without_one_ace(player_hand) > 7 or (hand_value_without_one_ace(player_hand) == 7 and hand_value(dealer_hand) < 9):
+                break
+        else:
+            if hand_value(player_hand) >= 17 or ((hand_value(player_hand) >= 12 and hand_value(dealer_hand) < 7) and 
                                              not (hand_value(player_hand) == 12 and hand_value(dealer_hand) <= 3)):
+                break
+
+        #if hand_value(player_hand) >= 17 or ((hand_value(player_hand) >= 12 and hand_value(dealer_hand) < 7) and 
+        #                                     not (hand_value(player_hand) == 12 and hand_value(dealer_hand) <= 3)):
+        #    break
+        
         #if hand_value(player_hand) >= 17 or (hand_value(player_hand) >= 12 and hand_value(dealer_hand) < 7):
+        #    break
+        
         #if hand_value(player_hand) >= 15:
-            break
+        #    break
+
         player_hand.append(deal_card(deck))
         if hand_value(player_hand) >= 21:
             break
