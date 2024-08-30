@@ -5,6 +5,7 @@ rank_values = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, 
 suits = ["♡", "♢", "♠", "♣"]
 
 bet = 1
+NUMBER_OF_DECKS = 1
 
 def deal_card(deck):
     return deck.pop(0)
@@ -62,6 +63,7 @@ def game_round():
     for r in ranks:
         for s in suits:
             deck.append((r, s))
+    deck = deck * NUMBER_OF_DECKS
     random.shuffle(deck)
 
     dealer_hand = []
