@@ -85,7 +85,11 @@ def game_round():
 
     if hand_value(player_hand) == 11 or (hand_value(player_hand) == 10 and
                      hand_value(dealer_hand) < 10) or (hand_value(player_hand) == 9 and hand_value(dealer_hand) > 2 and
-                     hand_value(dealer_hand) < 7):
+                     hand_value(dealer_hand) < 7) or (has_ace(player_hand) and hand_value_without_one_ace(player_hand) < 9 and
+                     ((hand_value(dealer_hand) == 2 and hand_value_without_one_ace(player_hand) == 7) or (hand_value(dealer_hand) == 3 and
+                     hand_value_without_one_ace(player_hand) <= 7 and hand_value_without_one_ace(player_hand) >= 6) or (hand_value(dealer_hand) == 4 and
+                     hand_value_without_one_ace(player_hand) <= 7 and hand_value_without_one_ace(player_hand) >= 4) or (hand_value(dealer_hand) == 5 and
+                     hand_value_without_one_ace(player_hand) <= 7 and hand_value_without_one_ace(player_hand) >= 2) or (hand_value(dealer_hand) == 6))):
         bet = 2
         player_hand.append(deal_card(deck))
     else:
