@@ -84,7 +84,7 @@ def game_round():
         return
 
     if player_hands[0][0][0] == player_hands[0][1][0]:
-        player_hands = [ [player_hands[0][0]], [player_hands[0][0]] ]
+        player_hands = [ [player_hands[0][0]], [player_hands[0][1]] ]
         player_hands[0].append(deal_card(deck))
         player_hands[1].append(deal_card(deck))
         counts["splits"] += 1
