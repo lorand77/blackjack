@@ -5,6 +5,7 @@ rank_values = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, 
 suits = ["♡", "♢", "♠", "♣"]
 
 NUMBER_OF_DECKS = 1
+NUMBER_OF_SPLITS_ALLOWED = 3
 
 def deal_card(deck):
     return deck.pop(0)
@@ -83,15 +84,27 @@ def game_round():
             counts["draw_bj"] += 1
         return
 
-    if player_hands[0][0][0] == player_hands[0][1][0] and ((player_hands[0][0][0] == "A") or (player_hands[0][0][0] == "9" and
-                     (hand_value(dealer_hand) < 7 or hand_value(dealer_hand) == 8 or hand_value(dealer_hand) == 9)) or (player_hands[0][0][0] == "8") or
-                     (player_hands[0][0][0] == "7" and hand_value(dealer_hand) < 8) or (player_hands[0][0][0] == "6" and hand_value(dealer_hand) < 7) or
-                     (player_hands[0][0][0] == "4" and hand_value(dealer_hand) > 4 and hand_value(dealer_hand) < 7) or
-                     (player_hands[0][0][0] == "3" and hand_value(dealer_hand) < 8) or (player_hands[0][0][0] == "2" and hand_value(dealer_hand) < 8)):
-        player_hands = [ [player_hands[0][0]], [player_hands[0][1]] ]
-        player_hands[0].append(deal_card(deck))
-        player_hands[1].append(deal_card(deck))
-        counts["splits"] += 1
+    n_splits = 0 
+    while True:
+        n_splits_in_for_loop = 0
+        for h in range(len(player_hands)):
+            if player_hands[h][0][0] == player_hands[h][1][0] and ((player_hands[h][0][0] == "A") or (player_hands[h][0][0] == "9" and
+                            (hand_value(dealer_hand) < 7 or hand_value(dealer_hand) == 8 or hand_value(dealer_hand) == 9)) or (player_hands[h][0][0] == "8") or
+                            (player_hands[h][0][0] == "7" and hand_value(dealer_hand) < 8) or (player_hands[h][0][0] == "6" and hand_value(dealer_hand) < 7) or
+                            (player_hands[h][0][0] == "4" and hand_value(dealer_hand) > 4 and hand_value(dealer_hand) < 7) or
+                            (player_hands[h][0][0] == "3" and hand_value(dealer_hand) < 8) or (player_hands[h][0][0] == "2" and hand_value(dealer_hand) < 8)):
+                player_hands.append( [ player_hands[h][1] ] )
+                del player_hands[h][1]
+                player_hands[h].append(deal_card(deck))
+                player_hands[-1].append(deal_card(deck))
+                counts["splits"] += 1
+                n_splits_in_for_loop += 1
+                n_splits += 1
+                if n_splits == NUMBER_OF_SPLITS_ALLOWED:
+                    break
+        if n_splits == NUMBER_OF_SPLITS_ALLOWED or n_splits_in_for_loop == 0:
+            break
+    split_counts[n_splits] += 1
 
     bets = [1] * len(player_hands)
 
@@ -157,8 +170,10 @@ def game_round():
 
 counts = {"player_wins_bj" : 0, "draw_bj" : 0,"player_busted" : 0, "dealer_busted" : 0, 
     "dealer_wins_bj" : 0, "player_wins" : 0, "dealer_wins" : 0, "draw" : 0, "double_down" : 0, "splits" : 0}
+split_counts = [0] * 10
 chips = 0
 for i in range(1000000):
     game_round()
 print(counts)
 print(chips)
+print(split_counts)
