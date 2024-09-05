@@ -176,7 +176,7 @@ counts = {"player_wins_bj" : 0, "draw_bj" : 0,"player_busted" : 0, "dealer_buste
     "dealer_wins_bj" : 0, "player_wins" : 0, "dealer_wins" : 0, "draw" : 0, "double_down" : 0, "splits" : 0}
 split_counts = [0] * 10
 chips = 0
-for i in range(10000000):
+for i in range(1000000):
     if i% 100000 == 0:
         print(i)
     game_round()
