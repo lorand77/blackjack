@@ -1,0 +1,130 @@
+4 decks:
+
+SUMMARY:
+
+full  0
+remove
+2    1.3
+3    1.6
+4    2              avg  1.8    2%
+5    2.6
+6    1.7
+---------------
+7    0.9
+8   -0.2            avg -0.1    0%
+9   -0.9
+---------------
+10  -2.7            avg -2.8   -3%
+A   -3
+
+full:-------------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 45862, 'draw_bj': 2099, 'player_busted': 160888, 'dealer_busted': 231540, 'dealer_wins_bj': 45415, 'player_wins': 162619, 'dealer_wins': 284237, 'draw': 86482, 'double_down': 109422, 'splits': 28017}
+    -581.0
+    -0.058100000000000006
+
+    {'player_wins_bj': 45733, 'draw_bj': 2158, 'player_busted': 160441, 'dealer_busted': 231524, 'dealer_wins_bj': 45216, 'player_wins': 163004, 'dealer_wins': 285702, 'draw': 85610, 'double_down': 110045, 'splits': 27971}
+    -223.5
+    -0.022350000000000002
+
+    {'player_wins_bj': 45422, 'draw_bj': 2109, 'player_busted': 161506, 'dealer_busted': 231972, 'dealer_wins_bj': 44974, 'player_wins': 163105, 'dealer_wins': 284193, 'draw': 86094, 'double_down': 109485, 'splits': 27919}
+    39.0
+    0.0039
+
+remove 2s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 52814, 'draw_bj': 2988, 'player_busted': 170544, 'dealer_busted': 225540, 'dealer_wins_bj': 52672, 'player_wins': 164360, 'dealer_wins': 262472, 'draw': 89097, 'double_down': 98021, 'splits': 29598}
+    12230.0
+    1.2229999999999999
+
+    {'player_wins_bj': 52464, 'draw_bj': 2938, 'player_busted': 169361, 'dealer_busted': 226043, 'dealer_wins_bj': 52715, 'player_wins': 164761, 'dealer_wins': 261139, 'draw': 90034, 'double_down': 97233, 'splits': 28149}
+    14315.0
+    1.4315
+
+remove 3s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 52856, 'draw_bj': 2886, 'player_busted': 172785, 'dealer_busted': 226536, 'dealer_wins_bj': 52865, 'player_wins': 164592, 'dealer_wins': 257806, 'draw': 88944, 'double_down': 93079, 'splits': 28197}
+    15849.0
+    1.5848999999999998
+
+remove 4s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 53061, 'draw_bj': 2952, 'player_busted': 174064, 'dealer_busted': 224276, 'dealer_wins_bj': 52893, 'player_wins': 168232, 'dealer_wins': 256091, 'draw': 89424, 'double_down': 92560, 'splits': 30259}
+    19419.5
+    1.9419499999999998
+
+    {'player_wins_bj': 52826, 'draw_bj': 2884, 'player_busted': 174027, 'dealer_busted': 224473, 'dealer_wins_bj': 52512, 'player_wins': 168666, 'dealer_wins': 256102, 'draw': 89300, 'double_down': 92345, 'splits': 30130}
+    20303.0
+    2.0303
+
+remove 5s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 53079, 'draw_bj': 2962, 'player_busted': 174419, 'dealer_busted': 225092, 'dealer_wins_bj': 52738, 'player_wins': 168434, 'dealer_wins': 253029, 'draw': 91331, 'double_down': 94768, 'splits': 30683}
+    25554.5
+    2.55545
+
+    {'player_wins_bj': 52927, 'draw_bj': 3028, 'player_busted': 174272, 'dealer_busted': 225997, 'dealer_wins_bj': 53123, 'player_wins': 168204, 'dealer_wins': 252665, 'draw': 90923, 'double_down': 94561, 'splits': 30852}
+    26619.5
+    2.66195
+
+remove 6s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 53256, 'draw_bj': 2935, 'player_busted': 170190, 'dealer_busted': 223067, 'dealer_wins_bj': 52990, 'player_wins': 167959, 'dealer_wins': 257900, 'draw': 91225, 'double_down': 86541, 'splits': 27842}
+    17691.0
+    1.7691
+
+    {'player_wins_bj': 52987, 'draw_bj': 3032, 'player_busted': 170129, 'dealer_busted': 221907, 'dealer_wins_bj': 53195, 'player_wins': 168682, 'dealer_wins': 258595, 'draw': 91168, 'double_down': 86320, 'splits': 28201}
+    16012.5
+    1.6012499999999998
+
+remove 7s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 52904, 'draw_bj': 3000, 'player_busted': 157217, 'dealer_busted': 240135, 'dealer_wins_bj': 53013, 'player_wins': 152246, 'dealer_wins': 278696, 'draw': 82659, 'double_down': 95213, 'splits': 29266}
+    10568.0
+    1.0568
+
+    {'player_wins_bj': 52517, 'draw_bj': 2904, 'player_busted': 157549, 'dealer_busted': 239297, 'dealer_wins_bj': 52915, 'player_wins': 152243, 'dealer_wins': 279238, 'draw': 83093, 'double_down': 95027, 'splits': 29340}
+    8355.5
+    0.83555
+
+remove 8s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 52871, 'draw_bj': 2952, 'player_busted': 156105, 'dealer_busted': 233371, 'dealer_wins_bj': 52820, 'player_wins': 151557, 'dealer_wins': 285020, 'draw': 83509, 'double_down': 106263, 'splits': 27031}
+    -3325.5
+    -0.33255
+
+    {'player_wins_bj': 52938, 'draw_bj': 2927, 'player_busted': 156138, 'dealer_busted': 234537, 'dealer_wins_bj': 53242, 'player_wins': 151554, 'dealer_wins': 283154, 'draw': 83634, 'double_down': 105026, 'splits': 26778}
+    -1237.0
+    -0.1237
+
+remove 9s: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 53051, 'draw_bj': 2960, 'player_busted': 149068, 'dealer_busted': 227521, 'dealer_wins_bj': 52832, 'player_wins': 156130, 'dealer_wins': 294400, 'draw': 85218, 'double_down': 116599, 'splits': 30087}
+    -9208.5
+    -0.92085
+
+{'player_wins_bj': 53181, 'draw_bj': 2935, 'player_busted': 149103, 'dealer_busted': 226911, 'dealer_wins_bj': 53083, 'player_wins': 156372, 'dealer_wins': 293859, 'draw': 85711, 'double_down': 117059, 'splits': 30247}
+-8267.5
+-0.8267500000000001
+
+remove 10s: ------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 40014, 'draw_bj': 1613, 'player_busted': 146489, 'dealer_busted': 227106, 'dealer_wins_bj': 40101, 'player_wins': 166611, 'dealer_wins': 317461, 'draw': 85054, 'double_down': 136270, 'splits': 34458}
+    -26533.0
+    -2.6533
+
+remove As: -------------------------------------------------------------------------------------
+
+    {'player_wins_bj': 0, 'draw_bj': 0, 'player_busted': 184128, 'dealer_busted': 274740, 'dealer_wins_bj': 0, 'player_wins': 159297, 'dealer_wins': 312588, 'draw': 87592, 'double_down': 111481, 'splits': 27699}      
+    -29668
+    -2.9668
+
+    {'player_wins_bj': 0, 'draw_bj': 0, 'player_busted': 184582, 'dealer_busted': 273922, 'dealer_wins_bj': 0, 'player_wins': 159282, 'dealer_wins': 312969, 'draw': 87563, 'double_down': 112049, 'splits': 27692}
+    -30761
+    -3.0761
+
+comparing with full:*****************************************************************************
+
+    {'player_wins_bj': 45733, 'draw_bj': 2158, 'player_busted': 160441, 'dealer_busted': 231524, 'dealer_wins_bj': 45216, 'player_wins': 163004, 'dealer_wins': 285702, 'draw': 85610, 'double_down': 110045, 'splits': 27971}
+    -223.5
+    -0.022350000000000002

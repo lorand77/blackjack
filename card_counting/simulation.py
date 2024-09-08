@@ -1,11 +1,13 @@
 import random
 
+# ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 rank_values = {"2":2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "10":10, "J":10, "Q":10, "K":10}
 suits = ["♡", "♢", "♠", "♣"]
 
-NUMBER_OF_DECKS = 6
+NUMBER_OF_DECKS = 4
 NUMBER_OF_SPLITS_ALLOWED = 3
+ITERATIONS = 1000000
 
 def deal_card(deck):
     return deck.pop(0)
@@ -176,10 +178,11 @@ counts = {"player_wins_bj" : 0, "draw_bj" : 0,"player_busted" : 0, "dealer_buste
     "dealer_wins_bj" : 0, "player_wins" : 0, "dealer_wins" : 0, "draw" : 0, "double_down" : 0, "splits" : 0}
 split_counts = [0] * 10
 chips = 0
-for i in range(1000000):
+for i in range(ITERATIONS):
     if i% 100000 == 0:
         print(i)
     game_round()
 print(counts)
 print(chips)
-print(split_counts)
+# print(split_counts)
+print(chips/ITERATIONS*100)
